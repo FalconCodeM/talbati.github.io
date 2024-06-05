@@ -12,6 +12,8 @@ class ReusableGreenBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
+      backgroundColor: AppColors.colorsGreen,
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
