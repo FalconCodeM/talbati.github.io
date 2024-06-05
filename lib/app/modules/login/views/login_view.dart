@@ -11,6 +11,7 @@ import 'package:talbati/app/data/widgets/resuable_main_background.dart';
 import 'package:talbati/app/data/widgets/reusable_button.dart';
 import 'package:talbati/app/data/widgets/reusable_green_background.dart';
 import 'package:talbati/app/data/widgets/reusable_text_lato.dart';
+import 'package:talbati/app/routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -27,7 +28,6 @@ class LoginView extends GetView<LoginController> {
         SingleChildScrollView(
           child: ReusableMainBackground(
             children: [
-              SizedBox(height: 10.h),
               const ReusableTextFieldWithTitle(
                 vertical: 0,
                 title: AppStrings.authEmailAddress,
@@ -38,11 +38,12 @@ class LoginView extends GetView<LoginController> {
                 title: AppStrings.authPassword,
                 hintText: AppStrings.enterPassword,
               ),
-              SizedBox(height: 30.h),
-              const ReusableButton(
+              SizedBox(height: 50.h),
+              ReusableButton(
+                onTap: () => Get.offAllNamed(Routes.SIGN_UP),
                 text: AppStrings.loginTitle,
               ),
-              SizedBox(height: 80.h),
+              SizedBox(height: 100.h),
               Column(
                 children: [
                   const ReusableTextLato(
@@ -85,7 +86,7 @@ class LoginView extends GetView<LoginController> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 50.h)
+                  SizedBox(height: 10.h)
                 ],
               )
             ],

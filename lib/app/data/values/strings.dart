@@ -10,4 +10,11 @@ class AppStrings {
   static const String authPassword = "Password";
   static const String enterPassword = "Enter password";
   static const String otherSignInOptions = "Other sign in options";
+  static const String yourName = "Your Name";
+  static const String enterYourName = "Enter your name";
+
+  // login page strings
+  static const String signUpTitle = "Sign Up";
+  static const String signUpSupTitle =
+      "To get more advantages sign up your account by filling in some informations";
 }
