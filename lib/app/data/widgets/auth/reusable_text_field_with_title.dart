@@ -6,6 +6,7 @@ import 'package:talbati/app/data/widgets/reusable_text_lato.dart';
 
 class ReusableTextFieldWithTitle extends StatelessWidget {
   final bool isPassword;
+  final bool showPassword;
   final TextInputType keyboardType;
   final Function(String)? onChanged;
   final String hintText;
@@ -18,6 +19,7 @@ class ReusableTextFieldWithTitle extends StatelessWidget {
     required this.title,
     required this.hintText,
     this.isPassword = false,
+    this.showPassword = false,
     this.keyboardType = TextInputType.text,
     this.onChanged,
     this.horizontal = 5,
@@ -42,6 +44,7 @@ class ReusableTextFieldWithTitle extends StatelessWidget {
           ReusableTextField(
             hintText: hintText,
             isPassword: isPassword,
+            showPassword: showPassword,
             onChanged: onChanged,
             keyboardType: keyboardType,
           ),

@@ -14,10 +14,10 @@ class ReusableGreenBackground extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       backgroundColor: AppColors.colorsGreen,
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          color: AppColors.colorsGreen,
+      body: Container(
+        width: double.infinity,
+        color: AppColors.colorsGreen,
+        child: SingleChildScrollView(
           child: Column(
             children: children,
           ),

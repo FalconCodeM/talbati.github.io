@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:talbati/app/data/values/colors.dart';
+import 'package:talbati/app/data/values/images.dart';
 import 'package:talbati/app/data/values/strings.dart';
 import 'package:talbati/app/data/widgets/auth/reusable_auth_app_bar.dart';
 import 'package:talbati/app/data/widgets/auth/reusable_text_field_with_title.dart';
@@ -25,72 +26,90 @@ class LoginView extends GetView<LoginController> {
           title: AppStrings.loginTitle,
           supTitle: AppStrings.loginSupTitle,
         ),
-        SingleChildScrollView(
-          child: ReusableMainBackground(
-            children: [
-              const ReusableTextFieldWithTitle(
-                vertical: 0,
-                title: AppStrings.authEmailAddress,
-                hintText: AppStrings.enterEmailAddress,
-              ),
-              const ReusableTextFieldWithTitle(
-                vertical: 0,
-                title: AppStrings.authPassword,
-                hintText: AppStrings.enterPassword,
-              ),
-              SizedBox(height: 50.h),
-              ReusableButton(
-                onTap: () => Get.offAllNamed(Routes.SIGN_UP),
-                text: AppStrings.loginTitle,
-              ),
-              SizedBox(height: 100.h),
-              Column(
-                children: [
-                  const ReusableTextLato(
-                    vertical: 0,
-                    text: AppStrings.otherSignInOptions,
-                    fontSize: 16,
-                    textColor: AppColors.primaryThirdElementText,
-                    fontWeight: FontWeight.w400,
+        ReusableMainBackground(
+          children: [
+            const ReusableTextFieldWithTitle(
+              vertical: 0,
+              title: AppStrings.authEmailAddress,
+              hintText: AppStrings.enterEmailAddress,
+            ),
+            const ReusableTextFieldWithTitle(
+              vertical: 0,
+              title: AppStrings.authPassword,
+              hintText: AppStrings.enterPassword,
+              isPassword: true,
+              showPassword: false,
+            ),
+            SizedBox(height: 50.h),
+            ReusableButton(
+              onTap: () => Get.offAllNamed(Routes.SIGN_UP),
+              text: AppStrings.loginTitle,
+            ),
+            SizedBox(height: 100.h),
+            Column(
+              children: [
+                const ReusableTextLato(
+                  vertical: 0,
+                  text: AppStrings.otherSignInOptions,
+                  fontSize: 16,
+                  textColor: AppColors.primaryThirdElementText,
+                  fontWeight: FontWeight.w400,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10.h, bottom: 30.h),
+                  padding: EdgeInsets.only(left: 75.w, right: 75.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: 30.5.w,
+                          height: 30.5.h,
+                          padding: EdgeInsets.all(0.5.w),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100.w),
+                            color: AppColors.primaryFourthElementText,
+                          ),
+                          child: Container(
+                            width: 30.w,
+                            height: 30.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100.w),
+                              color: AppColors.primaryElementText,
+                            ),
+                            child: Image.asset(
+                              AppImages.face,
+                              color: AppColors.primaryElement.withOpacity(0.8),
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: 40.w,
+                          height: 40.w,
+                          child: Image.asset("assets/icons/google.png"),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: 40.w,
+                          height: 40.w,
+                          child: Image.asset(
+                            "assets/icons/apple.png",
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 10.h, bottom: 30.h),
-                    padding: EdgeInsets.only(left: 75.w, right: 75.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: SizedBox(
-                            width: 40.w,
-                            height: 40.w,
-                            child: Image.asset("assets/icons/facebook.png"),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {},
-                          child: SizedBox(
-                            width: 40.w,
-                            height: 40.w,
-                            child: Image.asset("assets/icons/google.png"),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {},
-                          child: SizedBox(
-                            width: 40.w,
-                            height: 40.w,
-                            child: Image.asset("assets/icons/apple.png"),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 10.h)
-                ],
-              )
-            ],
-          ),
+                ),
+                SizedBox(height: 10.h)
+              ],
+            )
+          ],
         ),
       ],
     );

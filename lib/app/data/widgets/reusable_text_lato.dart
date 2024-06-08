@@ -29,6 +29,7 @@ class ReusableTextLato extends StatelessWidget {
         text,
         textAlign: textAlign,
         style: GoogleFonts.lato(
+
           textStyle: TextStyle(
             color: textColor,
             fontSize: fontSize.sp,
